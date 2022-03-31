@@ -34,5 +34,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@apollo/client": "3.5.10",
+    "@emotion/core": "11.0.0",
+    "@emotion/styled": "11.8.1",
+    "graphql": "16.3.0",
+    "react-router-dom": "6.2.2"
   }
 }

@@ -27,7 +27,7 @@ const client = new ApolloClient({
 function App() {
   return (
     <div>
-      <h2>My first Apollo app 🚀</h2>
+      <h2>FertKnowledge 🚀🚀🚀</h2>
       <FertilizerInfo />
     </div>
   );

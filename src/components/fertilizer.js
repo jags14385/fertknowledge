@@ -1,4 +1,6 @@
 import { gql, useQuery } from "@apollo/client";
+import { Badge } from "./shared/Badge";
+import { List, ListItemWithLink } from "./shared/List";
 
 const FERTLIZER_INFO_QUERY = gql`
   {
@@ -28,10 +30,11 @@ export default function FertilizerInfo() {
 
   return data.fertilizer_info.map(
     ({ product, product_no, product_constitutents }, index) => (
-      <>
-        <div key={index}>{product}</div>
-        <div key={index}>{product_no}</div>
-      </>
+      <div key={index}>
+        <p>
+          {product_no} | <Badge>{product}</Badge>
+        </p>
+      </div>
     )
   );
 }

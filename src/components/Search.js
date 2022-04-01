@@ -10,11 +10,11 @@ const SearchForm = styled.div`
   }
 `;
 
-const Search = () => {
+const Search = ({ inputVal, onChange, onSearch }) => {
   return (
     <SearchForm>
-      <Input></Input>
-      <Button>Search</Button>
+      <Input value={inputVal} onChange={onChange}></Input>
+      <Button onClick={onSearch}>Search</Button>
     </SearchForm>
   );
 };

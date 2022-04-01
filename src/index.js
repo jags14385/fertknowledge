@@ -4,6 +4,8 @@ import { ApolloProvider } from "@apollo/client";
 import { ApolloClient, HttpLink, InMemoryCache } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import FertilizerInfo from "./components/fertilizer";
+import Search from "./components/Search";
+import Logo from "./components/shared/Logo";
 
 const authLink = setContext((_, { headers }) => {
   return {
@@ -27,7 +29,8 @@ const client = new ApolloClient({
 function App() {
   return (
     <div>
-      <h2>FertKnowledge 🚀🚀🚀</h2>
+      <Logo />
+      <Search />
       <FertilizerInfo />
     </div>
   );

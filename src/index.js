@@ -3,9 +3,8 @@ import { render } from "react-dom";
 import { ApolloProvider } from "@apollo/client";
 import { ApolloClient, HttpLink, InMemoryCache } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
-import FertilizerInfo from "./components/fertilizer";
-import Search from "./components/Search";
 import Logo from "./components/shared/Logo";
+import FertilizerSearch from "./components/FertilizerSearch";
 
 const authLink = setContext((_, { headers }) => {
   return {
@@ -30,8 +29,7 @@ function App() {
   return (
     <div>
       <Logo />
-      <Search />
-      <FertilizerInfo />
+      <FertilizerSearch />
     </div>
   );
 }

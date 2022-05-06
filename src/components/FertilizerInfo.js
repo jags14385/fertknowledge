@@ -2,7 +2,7 @@ import { Badge } from "./shared/Badge";
 import { List, ListItem } from "./shared/List";
 
 export default function FertilizerInfo({ newFertilizers }) {
-  const renderDetail = (product_constitutents_details) => {
+  const renderConstitutentDetails = (product_constitutents_details) => {
     return product_constitutents_details.map((item, index) => {
       return (
         <div key={`${item.constitutents_detail.chemical_group}_${index}`}>
@@ -26,7 +26,7 @@ export default function FertilizerInfo({ newFertilizers }) {
         return (
           <ListItem key={index}>
             {product_no} || <Badge>{product}</Badge> ||{" "}
-            {renderDetail(product_constitutents_details)}
+            {renderConstitutentDetails(product_constitutents_details)}
           </ListItem>
         );
       }

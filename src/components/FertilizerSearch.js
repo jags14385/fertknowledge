@@ -22,8 +22,8 @@ const FertilizerSearch = () => {
         onChange={(e) => {
           setinputVal(e.target.value);
           search({ variables: { match: `%${e.target.value}%` } });
-          console.log("Input val :::", inputVal);
-          console.log("E target value :::", e.target.value);
+          // console.log("Input val :::", inputVal);
+          // console.log("E target value :::", e.target.value);
         }}
         //        onSearch={() => search({ variables: { match: `%${inputVal}%` } })}
       />

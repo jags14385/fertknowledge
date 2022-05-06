@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLazyQuery, gql } from "@apollo/client";
 import FertilizerInfo from "./FertilizerInfo";
 import Search from "./Search";
@@ -20,19 +20,26 @@ const SEARCH_FERTILIZER = gql`
 `;
 
 const FertilizerSearch = () => {
-  const [inputVal, setinputVal] = useState("");
+  const [inputVal, setinputVal] = useState(undefined);
   const [search, { _loading, error, data }] = useLazyQuery(SEARCH_FERTILIZER);
+
+  useEffect(() => {
+    if (inputVal === undefined || inputVal.length > 2) {
+      const stringValue = `%${inputVal}%`;
+      search({ variables: { match: inputVal ? stringValue : `%%` } });
+    }
+  }, [inputVal]);
+
   return (
     <div>
       <Search
         inputVal={inputVal}
         onChange={(e) => {
           setinputVal(e.target.value);
-          search({ variables: { match: `%${e.target.value}%` } });
           // console.log("Input val :::", inputVal);
           // console.log("E target value :::", e.target.value);
         }}
-        //        onSearch={() => search({ variables: { match: `%${inputVal}%` } })}
+        // onSearch={() => search({ variables: { match: `%${inputVal}%` } })}
       />
       {error ? (
         <span>Something went wrong</span>

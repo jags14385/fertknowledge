@@ -14,7 +14,7 @@ const Search = ({ inputVal, onChange, onSearch }) => {
   return (
     <SearchForm>
       <Input value={inputVal} onChange={onChange}></Input>
-      <Button onClick={onSearch}>Search</Button>
+      {/* <Button onClick={onSearch}>Search</Button> */}
     </SearchForm>
   );
 };

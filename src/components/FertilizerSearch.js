@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState } from "react";
 import { useLazyQuery, gql } from "@apollo/client";
 import FertilizerInfo from "./FertilizerInfo";
 import Search from "./Search";

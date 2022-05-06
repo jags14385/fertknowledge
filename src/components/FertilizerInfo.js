@@ -7,9 +7,20 @@ export default function FertilizerInfo({ newFertilizers }) {
     if (!fertilizers) {
       return <span>No fertilizers</span>;
     }
-    return fertilizers.map(({ product_no, product }) => (
+    return fertilizers.map(({ product_no, product, product_constitutents }) => (
       <ListItem>
-        {product_no} || <Badge>{product}</Badge>
+        {product_no} || <Badge>{product}</Badge> ||
+        {/* {product_constitutents.map(({ constitutents_detail }) =>
+          constitutents_detail.array(
+            ({ constituent_code, constituent_name, chemical_group }) => (
+              <ListItem>
+                <Badge>{constituent_code}</Badge>
+                <Badge>{constituent_name}</Badge>
+                <Badge>{chemical_group}</Badge>
+              </ListItem>
+            )
+          )
+        )} */}
       </ListItem>
     ));
   };

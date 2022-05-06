@@ -10,7 +10,17 @@ const LogoText = styled.h1`
 `;
 
 const Logo = () => {
-  return <LogoText>FertKnowledge</LogoText>;
+  return (
+    <>
+      <LogoText>FertKnowledge</LogoText>
+      <h3>
+        {" "}
+        <center>
+          Don’t flirt with FERT, it could HURT , Use FertKnowledge 🚀🚀🚀{" "}
+        </center>{" "}
+      </h3>
+    </>
+  );
 };
 
 export default Logo;

@@ -8,6 +8,13 @@ const SEARCH_FERTILIZER = gql`
     fertilizer_info(where: { product: { _ilike: $match } }) {
       product_no
       product
+      product_constitutents {
+        constitutents_detail {
+          constituent_code
+          constituent_name
+          chemical_group
+        }
+      }
     }
   }
 `;
